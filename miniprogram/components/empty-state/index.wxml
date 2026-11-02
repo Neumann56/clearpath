@@ -1,0 +1,5 @@
+<view class="es">
+  <view class="e1">{{icon}}</view>
+  <view class="e2">{{text}}</view>
+  <view wx:if="{{action}}" class="btn" hover-class="btn-hover" bindtap="onAct">{{action}}</view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "到岸成本报告",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "amount-dual": "/components/amount-dual/index",
+    "cost-list": "/components/cost-list/index",
+    "empty-state": "/components/empty-state/index"
+  }
+}

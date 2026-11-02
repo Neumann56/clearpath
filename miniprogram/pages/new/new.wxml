@@ -1,0 +1,112 @@
+<view class="wrap" style="padding-bottom:220rpx">
+
+  <view wx:if="{{demoMode}}" class="banner warn">
+    连不上服务器，国家列表只给了几个常用市场。<text style="font-weight:600">这时候提交不会出结果。</text>
+  </view>
+
+  <view class="card">
+    <picker bindchange="onCountry" range="{{countryLabels}}" range-key="label" value="{{countryIdx}}">
+      <view class="field" style="margin-bottom:0">
+        <view class="lb">目的国<text class="req">*</text></view>
+        <view class="picker-val">{{countryName || '点这里选'}}</view>
+        <view class="hint">{{countryLabels.length}} 个市场按区域分组；欧盟 27 国共用一套对外关税。</view>
+      </view>
+    </picker>
+  </view>
+
+  <view class="card">
+    <view class="field">
+      <view class="lb">HS 编码 / 品名<text class="req">*</text></view>
+      <input class="input" value="{{hsCode}}" bindinput="onHs" placeholder="8708.91 或直接写「汽配」" placeholder-class="ph" />
+      <scroll-view class="chips" scroll-x>
+        <view class="chip" wx:for="{{cats}}" wx:key="hs" data-hs="{{item.hs}}" bindtap="onCat">{{item.name}}</view>
+      </scroll-view>
+      <view class="hint">写品名也能认；认不出会直说，不拿相近品类顶替。</view>
+    </view>
+
+    <view class="field">
+      <view class="lb">FOB 货值（美元）<text class="req">*</text></view>
+      <input class="input" type="digit" value="{{fob}}" data-k="fob" bindinput="onNum" placeholder="48000" placeholder-class="ph" />
+      <view class="hint">不含运费保险的离岸价</view>
+    </view>
+
+    <view class="field">
+      <view class="lb">运费（美元）<text class="req">*</text></view>
+      <input class="input" type="digit" value="{{freight}}" data-k="freight" bindinput="onNum" placeholder="2400" placeholder-class="ph" />
+    </view>
+
+    <view class="field">
+      <view class="lb">数量<text class="req">*</text></view>
+      <input class="input" type="number" value="{{qty}}" data-k="qty" bindinput="onNum" placeholder="1200" placeholder-class="ph" />
+    </view>
+
+    <view class="field">
+      <view class="lb">渠道<text class="req">*</text></view>
+      <view class="seg">
+        <view class="s {{channel === 'B2B' ? 'on' : ''}}" data-v="B2B" bindtap="onChannel">B2B 企业采购</view>
+        <view class="s {{channel === 'B2C' ? 'on' : ''}}" data-v="B2C" bindtap="onChannel">B2C 零售包裹</view>
+      </view>
+      <view class="hint">选 B2C 会多出欧盟包裹费这类按件计的政策</view>
+    </view>
+
+    <picker mode="date" value="{{declarationDate}}" bindchange="onDate">
+      <view class="field" style="margin-bottom:0">
+        <view class="lb">申报日期<text class="req">*</text></view>
+        <view class="picker-val">{{declarationDate}}</view>
+        <view class="hint">决定适用哪一档税率，也决定 232/301 这类措施的版本</view>
+      </view>
+    </picker>
+  </view>
+
+  <view class="adv-toggle" bindtap="toggleAdv">
+    <view>更多选项：出口日、保险、反倾销</view>
+    <view class="muted">{{showAdv ? '收起' : '展开'}}</view>
+  </view>
+
+  <view wx:if="{{showAdv}}" class="card">
+    <picker mode="date" value="{{exportDate}}" bindchange="onAdvDate">
+      <view class="field">
+        <view class="lb">出口日期（装船日）</view>
+        <view class="picker-val">{{exportDate || '未填'}}</view>
+        <view class="hint">在途豁免要按它判定；不能用「交给货代日」顶替</view>
+      </view>
+    </picker>
+
+    <view class="field">
+      <view class="lb">保险（美元）</view>
+      <input class="input" type="digit" value="{{insurance}}" data-k="insurance" bindinput="onNum" placeholder="留空按默认系数估算" placeholder-class="ph" />
+      <view class="hint">留空会进「假设」清单，报告里标出来</view>
+    </view>
+
+    <view class="field">
+      <view class="lb">金属含量（0–1）</view>
+      <input class="input" type="digit" value="{{metalContentPct}}" data-k="metalContentPct" bindinput="onNum" placeholder="0.62" placeholder-class="ph" />
+      <view class="hint">命中 232 且档位允许豁免时才影响结论</view>
+    </view>
+
+    <view class="field">
+      <view class="lb">总面积（㎡）</view>
+      <input class="input" type="digit" value="{{areaSqm}}" data-k="areaSqm" bindinput="onNum" placeholder="如 5000" placeholder-class="ph" />
+      <view class="hint">反倾销按平方米定额计征时必填（如土耳其对华光伏），缺它这笔钱不出金额</view>
+    </view>
+
+    <view class="field" style="margin-bottom:0">
+      <view class="lb">规费</view>
+      <view class="seg">
+        <view class="s {{chargesMode === '' ? 'on' : ''}}" data-v="" bindtap="onCharges">不计</view>
+        <view class="s {{chargesMode === 'all' ? 'on' : ''}}" data-v="all" bindtap="onCharges">全部计入</view>
+      </view>
+      <view class="hint">报关代理费、码头操作费按区间中值估算</view>
+    </view>
+  </view>
+
+</view>
+
+<view class="footbar">
+  <view class="est">
+    <view class="e">真实成本<text class="v">{{estCost}}</text></view>
+    <view class="e">需备现金<text class="v">{{estCash}}</text></view>
+  </view>
+  <view wx:if="{{estMsg}}" class="tiny muted" style="margin-bottom:10rpx">{{estMsg}}</view>
+  <view class="btn {{submitting ? 'disabled' : ''}}" bindtap="onSubmit">{{submitting ? '正在算…' : '算出这票的账'}}</view>
+</view>

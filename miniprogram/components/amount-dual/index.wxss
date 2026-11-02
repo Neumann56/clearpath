@@ -1,0 +1,68 @@
+/* 自带全量样式，值抄自 app.wxss。组件不许依赖页面样式——
+   否则同一个组件放到两页上会长得不一样，而且改一处会连带改坏别处。 */
+
+.ad {
+  display: flex;
+  background: #fff;
+  border: 1rpx solid #e2e7ec;
+  border-radius: 24rpx;
+  overflow: hidden;
+  margin-bottom: 12rpx;
+}
+
+.cell { flex: 1; padding: 26rpx 24rpx 22rpx; min-width: 0; }
+.cell + .cell { border-left: 1rpx solid #e2e7ec; }
+
+.k { font-size: 23rpx; color: #6c7a86; margin-bottom: 6rpx; }
+
+.v {
+  font-size: 48rpx;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1rpx;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: #141a1f;
+}
+.main .v { color: #0f4d5c; }
+
+.n { font-size: 22rpx; color: #6c7a86; margin-top: 4rpx; }
+
+.ad.sm .cell { padding: 20rpx 20rpx 18rpx; }
+.ad.sm .v { font-size: 38rpx; }
+
+.note {
+  display: flex;
+  align-items: flex-start;
+  font-size: 23rpx;
+  color: #6c7a86;
+  line-height: 1.6;
+  margin: 0 8rpx 26rpx;
+}
+.neq {
+  flex: 0 0 auto;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  background: #eef1f4;
+  color: #3d4a55;
+  font-size: 20rpx;
+  text-align: center;
+  line-height: 30rpx;
+  margin: 3rpx 10rpx 0 0;
+}
+.nt { flex: 1; min-width: 0; }
+
+.gap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 24rpx;
+  margin-bottom: 22rpx;
+  background: #fdf3e3;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color: #7d5310;
+}
+.gv { font-size: 30rpx; font-weight: 700; font-variant-numeric: tabular-nums; }
+.gs { font-size: 22rpx; }

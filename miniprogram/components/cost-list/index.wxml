@@ -1,0 +1,10 @@
+<view wx:if="{{rows.length === 0 && empty}}" class="none">{{empty}}</view>
+
+<view class="row {{item.tot ? 'tot' : ''}}" wx:for="{{rows}}" wx:key="i">
+  <view class="k">
+    <text>{{item.k}}</text>
+    <text wx:if="{{item.tag}}" class="tag {{item.tagCls}}">{{item.tag}}</text>
+    <text wx:if="{{item.sub}}" class="i">{{item.sub}}</text>
+  </view>
+  <view wx:if="{{item.v !== undefined && item.v !== null && item.v !== ''}}" class="v {{item.cls}}">{{item.v}}</view>
+</view>

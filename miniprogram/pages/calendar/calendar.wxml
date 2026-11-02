@@ -1,0 +1,39 @@
+<view class="wrap">
+
+  <view wx:if="{{loading}}" class="loading">正在取政策节点…</view>
+
+  <block wx:else>
+    <view wx:if="{{demoMode}}" class="banner warn">连不上服务器，下面是<text style="font-weight:600">演示节点</text>。</view>
+
+    <view class="banner info">
+      今天是 {{today}}。只看参数库里已经入库的节点——{{note}}
+    </view>
+
+    <view wx:for="{{spans}}" wx:key="label" class="spanbox">
+      <text class="st">{{item.label}}{{item.countryName ? ' · ' + item.countryName : ''}}</text>
+      装船不晚于 {{item.shipBy}}，申报不晚于 {{item.enterBy}}。两个条件差一天，豁免就没了。
+      <view wx:if="{{item.note}}" style="margin-top:8rpx">{{item.note}}</view>
+    </view>
+
+    <block wx:for="{{months}}" wx:key="key" wx:for-item="m">
+      <view class="cal-month">{{m.title}}</view>
+      <view class="card" style="padding:6rpx 26rpx">
+        <view class="cal-item {{it.state}}" wx:for="{{m.items}}" wx:key="label" wx:for-item="it">
+          <view class="cal-date">{{it.date}}</view>
+          <view class="cal-b">
+            <view class="cal-t">{{it.label}}</view>
+            <view class="cal-m">
+              {{it.kind}}{{it.country ? ' · ' + it.country : ''}}{{it.state === 'soon' ? ' · 30 天内' : it.state === 'in' ? ' · 已生效' : ''}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view wx:if="{{months.length === 0}}" class="empty">
+      <view class="e1">◷</view>
+      <view class="e2">参数库里还没有可显示的政策节点。</view>
+    </view>
+  </block>
+
+</view>

@@ -1,0 +1,318 @@
+[
+  {
+    "id": "UF-01",
+    "title": "8708.91 是否属于美国 232 汽车零部件清单",
+    "category": "U1_FACT",
+    "displayTier": "T1_BRANCH",
+    "blocking": false,
+    "scope": {
+      "countries": [
+        "US"
+      ],
+      "hsPrefixes": [
+        "8708"
+      ],
+      "measures": [
+        "SECTION_232"
+      ]
+    },
+    "currentValue": {
+      "branch": "B",
+      "label": "不计入 232（默认）",
+      "landedCost": "70862.40"
+    },
+    "counterValue": {
+      "branch": "A",
+      "label": "计入 232（Annex I-B 25%）",
+      "landedCost": "64535.40"
+    },
+    "currentBasis": "调研补充包 v1 结论（confidence: medium）：232 的 407 类衍生品清单以成品钢铝为主（家具、压缩机、家电），8708.91 汽车散热器未明确列入。但存在一条真实的分歧路径——若海关把散热器认定为\"铝制品\"而非\"汽车零件\"，就会落进 232 范围。这一票的成本差 6,327.00，方向是\"如果成立则更贵\"，所以默认仍按不计入。",
+    "counterBasis": "CBP 2026-04-02 公告 Annex I-B 列名（若能列到 8708.91 即成立）；或海关对\"含铝汽车零件\"作出铝制品归类裁定。关闭条件：取得 USITC 最新公告附件正文逐条比对 + 报关行书面确认归类意见。",
+    "defaultBranch": "B",
+    "defaultDirectionNote": "本默认按不计入计算；若该措施成立，成本会更低 6,327.00",
+    "impactRule": {
+      "type": "delta_landed",
+      "per": "shipment",
+      "pair": [
+        "A",
+        "B"
+      ]
+    },
+    "impactUsdCached": "6327.00",
+    "impactDisplay": "6,327.00",
+    "reviewAction": "查 CBP 2026-04-02 公告 Annex I-A / I-B / III 列名；或取一份 8708.91 实际报关回执看是否出现 Chapter 99 章号",
+    "closeCriteria": "CBP 公告 Annex 正文明确列出 8708.91（或明确未列），或报关行提供含 Chapter 99 税号的申报回执",
+    "owner": "运营 A",
+    "reviewDue": "2026-11-21",
+    "dueSetBy": "default:T1=30d",
+    "status": "open",
+    "validFrom": "2026-04-06",
+    "validTo": null,
+    "createdBy": "产品",
+    "reviewedBy": "数据运营 B",
+    "evidenceUrl": "",
+    "evidenceNote": "",
+    "closedThen": "① 若在清单内：SECTION_232 升 confidence: high，excludes 生效，branch A 变默认；② 若不在：删除 232 行或置 valid_to；③ 两种情况都要跑黄金用例 D/E 回归",
+    "internalNote": "v2 §10.3 seed 已建 232 行但标 confidence: low + annexRef: 'Annex I-B（待核）'；默认分支 = 不计入未确认的措施",
+    "researchRef": "research-v1#UF-01",
+    "progress": "本轮调研未关闭，但把不确定性收敛到\"归类争议\"一种情形，比分之前的\"完全不知道是否在清单内\"更窄"
+  },
+  {
+    "id": "UF-02",
+    "title": "旧 301（25%）是否也被 232 排除",
+    "category": "U1_FACT",
+    "displayTier": "T2_IMPACT",
+    "blocking": false,
+    "scope": {
+      "countries": [
+        "US"
+      ],
+      "hsPrefixes": [
+        "8708"
+      ],
+      "measures": [
+        "SECTION_301"
+      ]
+    },
+    "currentValue": {
+      "excluded": true,
+      "label": "232 命中即旧 301 与新 301 均为 0"
+    },
+    "counterValue": {
+      "excluded": false,
+      "label": "232 命中但旧 301 仍计 25%"
+    },
+    "currentBasis": "已核：301 List 1–3 仍执行 25%，List 4A 为 7.5%。8708.91.75（汽车散热器）第三方标记挂 List 1–3 25%。2026-10 第八轮中美磋商的 300 亿对等降税不涵盖 8708（仅玩具、家电受益）。301 四年复审于 2026-05 启动，结论未出——复审结果出来前本档不会变。",
+    "counterBasis": "CBP 一般豁免清单是否覆盖 9903.88 全段尚未确认",
+    "appliesToBranch": "A",
+    "dependsOn": "UF-01",
+    "impactRule": {
+      "type": "delta_line",
+      "per": "shipment",
+      "measure": "SECTION_301",
+      "appliesToBranch": "A",
+      "sign": "+"
+    },
+    "impactUsdCached": "12654.00",
+    "impactDisplay": "12,654.00",
+    "reviewAction": "核 CBP 一般豁免清单（General Note / Chapter 99 注释）是否覆盖 9903.88.xx 全段；或找一份同时含 232 与 301 章号的实际回执",
+    "closeCriteria": "CBP 豁免清单或正式裁定明确 232 覆盖品不适用 9903.88 系列；或实际回执显示二者并存",
+    "owner": "运营 A",
+    "reviewDue": "2027-01-20",
+    "dueSetBy": "default:T2=90d",
+    "validFrom": "2026-04-06",
+    "validTo": null,
+    "createdBy": "产品",
+    "reviewedBy": "数据运营 B",
+    "evidenceUrl": "",
+    "evidenceNote": "",
+    "riskNote": "内部备注：这是双重不确定，只有 UF-01 成立（branch A）时 UF-02 才有意义，报告层不得把两条并列成两个独立风险，也不得把两条金额相加",
+    "dependencyNote": "这一项只在 UF-01 成立时才有意义：232 若不命中，本条不改变任何金额；232 命中后，“旧 301 是否同时失效”才成为问题。所以两条要一起看，金额不能相加——最坏情形走的是「A + 本条」这一条路径，而不是两条各自相加。",
+    "internalNote": "多省商务厅计税口径“传统上不叠加”，表述留有余地；核验清单 A3 判为 medium",
+    "researchRef": "research-v1#UF-02",
+    "status": "resolved",
+    "resolvedAt": "2026-10-24",
+    "resolvedBy": "调研补充包 v1（一手核验：hts.usitc.gov REST API，2026-10-20）"
+  },
+  {
+    "id": "UF-03",
+    "title": "巴西 PIS/COFINS 税基是否含 ICMS",
+    "category": "U2_PARAM",
+    "displayTier": "T3_FOOTNOTE",
+    "blocking": false,
+    "scope": {
+      "countries": [
+        "BR"
+      ],
+      "hsPrefixes": [
+        "*"
+      ],
+      "measures": [
+        "PIS_COFINS"
+      ]
+    },
+    "currentValue": {
+      "includesIcms": false,
+      "label": "不含 ICMS（当前实现）"
+    },
+    "counterValue": {
+      "includesIcms": true,
+      "label": "含 ICMS（需联立求解，MVP 不支持）"
+    },
+    "currentBasis": "本票按“PIS/COFINS 税基不含 ICMS”计算（税基 = CIF + 关税 + IPI）；该口径目前是税务代理口头确认，未取得书面依据。",
+    "counterBasis": "若税基含 ICMS，则 PIS 依赖 ICMS、ICMS 又依赖 PIS，构成循环引用",
+    "impactRule": {
+      "type": "scope_rate_range",
+      "per": "shipment",
+      "rangePct": [
+        0.01,
+        0.03
+      ],
+      "note": "成环，线性税链无法并列第二组数字，故只给定性区间"
+    },
+    "impactUsdCached": null,
+    "impactDisplay": "税负上升约 1–3%",
+    "reviewAction": "找巴西税务代理或会计出具书面口径；查 Receita Federal 现行 IN 原文",
+    "closeCriteria": "收到具名税务代理/会计师事务所的书面口径（含适用法规条号）",
+    "owner": "运营 C",
+    "reviewDue": "2027-04-20",
+    "dueSetBy": "default:T3=180d",
+    "status": "open",
+    "validFrom": "2024-01-01",
+    "validTo": null,
+    "createdBy": "产品",
+    "reviewedBy": "数据运营 B",
+    "evidenceUrl": "",
+    "evidenceNote": "",
+    "internalNote": "PIS_COFINS.baseComponents = [cif, duty, IPI]，confidence: low"
+  },
+  {
+    "id": "UF-04",
+    "title": "D 级 6 项存疑参数（范围/周期/版本类）",
+    "category": "U2_PARAM",
+    "displayTier": "T4_INTERNAL",
+    "blocking": false,
+    "scope": {
+      "countries": [
+        "HU",
+        "CZ",
+        "TR",
+        "SA",
+        "ID"
+      ],
+      "hsPrefixes": [
+        "*"
+      ],
+      "measures": []
+    },
+    "currentValue": {
+      "policy": "只做定性描述，不输出具体数字结论"
+    },
+    "counterValue": null,
+    "currentBasis": "这六项都没有可溯源的一手来源（多为范围、周期、版本类参数），所以报告只做定性描述，不输出具体数字结论。",
+    "counterBasis": null,
+    "impactRule": {
+      "type": "qualitative",
+      "per": "shipment"
+    },
+    "impactUsdCached": null,
+    "impactDisplay": "不进入金额",
+    "reviewAction": "逐项向认证机构/主管部门/承运人索取书面口径",
+    "closeCriteria": "六项各自取得一手来源（公告/书面答复）后分别关闭为 resolved",
+    "owner": "运营 C",
+    "reviewDue": "2027-04-20",
+    "dueSetBy": "default:T4=180d",
+    "status": "open",
+    "validFrom": "2024-01-01",
+    "validTo": null,
+    "createdBy": "产品",
+    "reviewedBy": "数据运营 B",
+    "evidenceUrl": "",
+    "evidenceNote": "",
+    "subItems": [
+      {
+        "id": "D1",
+        "title": "UN38.3 版本号",
+        "doubt": "写作 V6.5，版本号未经核实",
+        "currentImpl": "不写版本号，只写“UN38.3 测试概要”",
+        "affects": "文案准确性，不影响金额",
+        "reportText": "锂电池类需 UN38.3 测试概要（具体修订版以承运人要求为准）",
+        "suggestAction": "向承运人索取其接受的 UN38.3 修订版清单"
+      },
+      {
+        "id": "D2",
+        "title": "印尼 SNI 认证周期",
+        "doubt": "12–24 个月疑偏长（常见 3–9 个月）",
+        "currentImpl": "lead_time_days = [90, 270]，标 unverified",
+        "affects": "时效展示、备货计划建议",
+        "reportText": "SNI 认证周期未经核实，请以认证机构答复为准",
+        "suggestAction": "向印尼认可认证机构（LSPro）询书面周期"
+      },
+      {
+        "id": "D3",
+        "title": "印尼 SNI 强制品类数量",
+        "doubt": "“1000+ 种”口径不明",
+        "currentImpl": "参数表不存品类数，只存品类清单来源",
+        "affects": "命中判定范围",
+        "reportText": "强制品类数量未经核实，请以印尼工业部公告为准",
+        "suggestAction": "查印尼工业部（Kemenperin）强制品类公告原文"
+      },
+      {
+        "id": "D4",
+        "title": "沙特 SABER 覆盖范围",
+        "doubt": "“所有输沙货物”过宽，应为受管制产品",
+        "currentImpl": "改为“受管制产品”，命中清单外默认不触发",
+        "affects": "合规成本是否计入",
+        "reportText": "若属受管制产品需 SABER；是否属管制清单待核",
+        "suggestAction": "查 SASO 受管制产品清单"
+      },
+      {
+        "id": "D5",
+        "title": "土耳其对华 EV 附加 40%",
+        "doubt": "案号/扩围/从量下限未给",
+        "currentImpl": "按 unverified 处理，不进任何对外金额",
+        "affects": "土耳其整车品类结论",
+        "reportText": "该品类可能有额外附加税，需核实",
+        "suggestAction": "向土耳其贸易部/当地进口商索取公告号与适用范围"
+      },
+      {
+        "id": "D6",
+        "title": "CBAM 扩围时点",
+        "doubt": "2028 扩围与 2026 正式期覆盖清单未定",
+        "currentImpl": "只建 2026 基础材料（水泥/电力/化肥/钢铁/铝/氢）",
+        "affects": "欧盟品类成本",
+        "reportText": "CBAM 目前覆盖基础材料；下游扩围时点未定（待核）",
+        "suggestAction": "查欧盟 CBAM 实施条例（2023/956）修订与过渡期报告"
+      }
+    ],
+    "internalNote": "六项均无可溯源一手来源，按 unverified / low 处理"
+  },
+  {
+    "id": "UF-05",
+    "title": "HS2027 各国实施时点",
+    "category": "U4_VERSION",
+    "displayTier": "T2_IMPACT",
+    "blocking": false,
+    "scope": {
+      "countries": [
+        "HU",
+        "CZ",
+        "US"
+      ],
+      "hsPrefixes": [
+        "*"
+      ],
+      "measures": []
+    },
+    "currentValue": {
+      "hsVersion": "2022",
+      "label": "本报告基于 HS2022 参数"
+    },
+    "counterValue": {
+      "hsVersion": "2027",
+      "label": "切换后归类可能变化"
+    },
+    "currentBasis": "本报告全部参数按 HS2022 版本计算；我们从 2026-12-01 起提示核对，这只是产品提醒，不代表任何国家的法定切换日。",
+    "counterBasis": "各国实施时点不同（EU TARIC / US HTS / CN / ASEAN 各自有滞后），未预设任何国家法定切换日",
+    "impactRule": {
+      "type": "scope_break",
+      "per": "shipment",
+      "note": "编码体系整体迁移，无法用单票差额表达"
+    },
+    "impactUsdCached": null,
+    "impactDisplay": "影响归类，不可用差额表达",
+    "reviewAction": "逐国核：欧盟 TARIC 实施公告、USITC HTS 修订、中国海关总署公告、东盟各国税则",
+    "closeCriteria": "至少覆盖 P0 国家（HU/CZ/US）的官方实施日期全部取得",
+    "owner": "运营 D",
+    "reviewDue": "2027-04-20",
+    "dueSetBy": "default:T2/T3=180d",
+    "status": "open",
+    "validFrom": "2026-12-01",
+    "validTo": null,
+    "createdBy": "产品",
+    "reviewedBy": "数据运营 B",
+    "evidenceUrl": "",
+    "evidenceNote": "",
+    "internalNote": "全部参数带 hs_version = 2022；产品提醒起点 2026-12-01（提醒策略，非法定生效日）"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "通途",
+  "usingComponents": {
+    "amount-dual": "/components/amount-dual/index"
+  }
+}

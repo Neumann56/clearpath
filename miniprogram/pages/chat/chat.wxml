@@ -1,0 +1,31 @@
+<scroll-view
+  scroll-y
+  class="chat"
+  scroll-into-view="{{scrollTo}}"
+  scroll-with-animation
+  style="height:calc(100vh - 180rpx);box-sizing:border-box"
+>
+  <view wx:for="{{msgs}}" wx:key="id" id="m{{item.id}}" class="msg {{item.role}}">
+    <view class="bub">{{item.text}}</view>
+  </view>
+  <view wx:if="{{busy}}" class="msg bot">
+    <view class="bub muted">正在想…</view>
+  </view>
+  <view wx:if="{{msgs.length <= 1}}" class="chips" style="padding:20rpx 0">
+    <view class="chip" wx:for="{{suggestions}}" wx:key="*this" data-q="{{item}}" bindtap="onChip">{{item}}</view>
+  </view>
+</scroll-view>
+
+<view class="chatin">
+  <textarea
+    value="{{input}}"
+    bindinput="onInput"
+    placeholder="问点具体的，越具体越有用"
+    placeholder-class="ph"
+    auto-height
+    maxlength="500"
+    adjust-position
+    show-confirm-bar="{{false}}"
+  />
+  <view class="send {{busy || !input ? 'off' : ''}}" bindtap="onSend">↑</view>
+</view>

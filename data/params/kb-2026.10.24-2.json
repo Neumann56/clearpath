@@ -1,0 +1,1751 @@
+{
+  "paramsVersion": "kb-2026.10.24-2",
+  "engineVersion": "0.1.0",
+  "productVersion": "MVP",
+  "asOf": "2026-10-22",
+  "hsVersion": "2022",
+  "insuranceDefaultRate": "0.0045",
+  "insuranceDefaultNote": "该系数为回标黄金用例的标定值（216.00 / 48,000），不是行业惯例",
+  "countries": [
+    {
+      "code": "HU",
+      "name": "匈牙利",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "HUF",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "CZ",
+      "name": "捷克",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "CZK",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "US",
+      "name": "美国",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "USD",
+      "fxDateRule": "declaration_date",
+      "region": "NA",
+      "confidence": "high",
+      "sourceUrl": "https://hts.usitc.gov/"
+    },
+    {
+      "code": "BR",
+      "name": "巴西",
+      "supported": true,
+      "entryEnabled": false,
+      "currency": "USD",
+      "fxDateRule": "declaration_date",
+      "region": "LATAM",
+      "confidence": "medium",
+      "sourceUrl": "https://www.gov.br/receitafederal/"
+    },
+    {
+      "code": "IN",
+      "name": "印度",
+      "supported": true,
+      "entryEnabled": false,
+      "currency": "USD",
+      "fxDateRule": "declaration_date",
+      "region": "ASIA",
+      "confidence": "medium",
+      "sourceUrl": "https://www.cbic.gov.in/"
+    },
+    {
+      "code": "TR",
+      "name": "土耳其",
+      "supported": true,
+      "entryEnabled": false,
+      "currency": "USD",
+      "fxDateRule": "declaration_date",
+      "region": "MEA",
+      "confidence": "medium",
+      "sourceUrl": "https://www.ticaret.gov.tr/"
+    },
+    {
+      "code": "DE",
+      "name": "德国",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "FR",
+      "name": "法国",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "IT",
+      "name": "意大利",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "NL",
+      "name": "荷兰",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "BE",
+      "name": "比利时",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "AT",
+      "name": "奥地利",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "ES",
+      "name": "西班牙",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "PL",
+      "name": "波兰",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "PLN",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "SE",
+      "name": "瑞典",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "SEK",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "DK",
+      "name": "丹麦",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "DKK",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "FI",
+      "name": "芬兰",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "IE",
+      "name": "爱尔兰",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "PT",
+      "name": "葡萄牙",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "GR",
+      "name": "希腊",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "LU",
+      "name": "卢森堡",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "SI",
+      "name": "斯洛文尼亚",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "SK",
+      "name": "斯洛伐克",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "RO",
+      "name": "罗马尼亚",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "RON",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "BG",
+      "name": "保加利亚",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "BGN",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "HR",
+      "name": "克罗地亚",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "LT",
+      "name": "立陶宛",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "LV",
+      "name": "拉脱维亚",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "EE",
+      "name": "爱沙尼亚",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "CY",
+      "name": "塞浦路斯",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    },
+    {
+      "code": "MT",
+      "name": "马耳他",
+      "supported": true,
+      "entryEnabled": true,
+      "currency": "EUR",
+      "fxDateRule": "declaration_date",
+      "region": "EU",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp"
+    }
+  ],
+  "tariffs": [
+    {
+      "country": "HU",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "CZ",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "US",
+      "hsPrefix": "870891",
+      "rate": "0.025",
+      "confidence": "high",
+      "sourceUrl": "https://hts.usitc.gov/search?query=8708.91",
+      "validFrom": "2024-01-01",
+      "note": "HTS 8708.91.50 · 2.5%"
+    },
+    {
+      "country": "BR",
+      "hsPrefix": "870891",
+      "rate": "0.16",
+      "confidence": "medium",
+      "sourceUrl": "https://www.gov.br/receitafederal/",
+      "validFrom": "2024-01-01",
+      "note": "样例口径 II 16%（用于引擎回归）"
+    },
+    {
+      "country": "IN",
+      "hsPrefix": "870891",
+      "rate": "0.075",
+      "confidence": "medium",
+      "sourceUrl": "https://www.cbic.gov.in/",
+      "validFrom": "2024-01-01",
+      "note": "样例口径 BCD 7.5%（用于引擎回归）"
+    },
+    {
+      "country": "TR",
+      "hsPrefix": "870891",
+      "rate": "0.05",
+      "confidence": "medium",
+      "sourceUrl": "https://www.ticaret.gov.tr/",
+      "validFrom": "2024-01-01",
+      "note": "样例口径 duty 5%（用于引擎回归）"
+    },
+    {
+      "country": "TR",
+      "hsPrefix": "8703",
+      "rate": "0.10",
+      "confidence": "medium",
+      "sourceUrl": "https://www.ticaret.gov.tr/",
+      "validFrom": "2024-01-01",
+      "note": "整车 MFN 10%（示例）"
+    },
+    {
+      "country": "TR",
+      "hsPrefix": "9005",
+      "rate": "0.05",
+      "confidence": "medium",
+      "sourceUrl": "https://www.ticaret.gov.tr/",
+      "validFrom": "2024-01-01",
+      "note": "光学仪器样例口径（用于两用物项演示）"
+    },
+    {
+      "country": "DE",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "FR",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "IT",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "NL",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "BE",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "AT",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "ES",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "PL",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "SE",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "DK",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "FI",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "IE",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "PT",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "GR",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "LU",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "SI",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "SK",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "RO",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "BG",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "HR",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "LT",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "LV",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "EE",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "CY",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    },
+    {
+      "country": "MT",
+      "hsPrefix": "870891",
+      "rate": "0.03",
+      "confidence": "high",
+      "sourceUrl": "https://ec.europa.eu/taxation_customs/dds2/taric/taric_consultation.jsp",
+      "validFrom": "2024-01-01",
+      "note": "TARIC 8708 91 · 欧盟共同税则 3%（6 位口径）；8 位子目 8708 91 20=3%、35/91=4.5%、99=3.5%，需按实际子目复核"
+    }
+  ],
+  "taxSteps": [
+    {
+      "country": "HU",
+      "seq": 30,
+      "taxCode": "HU_VAT",
+      "taxNameZh": "增值税（ÁFA）",
+      "rate": "0.27",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://nav.gov.hu/",
+      "validFrom": "2024-01-01",
+      "note": "B2B 持有 VAT 号可抵扣，只影响现金流，不进 landedCost"
+    },
+    {
+      "country": "CZ",
+      "seq": 30,
+      "taxCode": "CZ_DPH",
+      "taxNameZh": "增值税（DPH）",
+      "rate": "0.21",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://www.financnisprava.cz/",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 21%"
+    },
+    {
+      "country": "BR",
+      "seq": 20,
+      "taxCode": "IPI",
+      "taxNameZh": "工业产品税",
+      "rate": "0.10",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": false,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "medium",
+      "sourceUrl": "https://www.gov.br/receitafederal/",
+      "validFrom": "2024-01-01"
+    },
+    {
+      "country": "BR",
+      "seq": 30,
+      "taxCode": "PIS_COFINS",
+      "taxNameZh": "社会税 PIS/COFINS",
+      "rate": "0.1175",
+      "baseComponents": [
+        "cif",
+        "duty",
+        {
+          "ref": "IPI"
+        }
+      ],
+      "inclusive": false,
+      "refundable": false,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "low",
+      "sourceUrl": "https://www.gov.br/receitafederal/",
+      "validFrom": "2024-01-01",
+      "note": "税基口径存在争议，标低置信度待核（UF-03）"
+    },
+    {
+      "country": "BR",
+      "seq": 40,
+      "taxCode": "ICMS",
+      "taxNameZh": "州流转税 ICMS",
+      "rate": "0.18",
+      "baseComponents": [
+        "cif",
+        "duty",
+        {
+          "ref": "IPI"
+        },
+        {
+          "ref": "PIS_COFINS"
+        }
+      ],
+      "inclusive": true,
+      "refundable": false,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "medium",
+      "sourceUrl": "https://www.gov.br/receitafederal/",
+      "validFrom": "2024-01-01",
+      "note": "价内税，须 gross-up；各州 17–20%"
+    },
+    {
+      "country": "IN",
+      "seq": 30,
+      "taxCode": "IGST",
+      "taxNameZh": "综合商品服务税",
+      "rate": "0.18",
+      "baseComponents": [
+        "cif",
+        "duty",
+        "surtax"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "medium",
+      "sourceUrl": "https://www.cbic.gov.in/",
+      "validFrom": "2024-01-01"
+    },
+    {
+      "country": "TR",
+      "seq": 30,
+      "taxCode": "KDV",
+      "taxNameZh": "增值税（KDV）",
+      "rate": "0.20",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "medium",
+      "sourceUrl": "https://www.ticaret.gov.tr/",
+      "validFrom": "2024-01-01"
+    },
+    {
+      "country": "DE",
+      "seq": 30,
+      "taxCode": "DE_VAT",
+      "taxNameZh": "增值税（MwSt/USt）",
+      "rate": "0.19",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 19%"
+    },
+    {
+      "country": "FR",
+      "seq": 30,
+      "taxCode": "FR_VAT",
+      "taxNameZh": "增值税（TVA）",
+      "rate": "0.20",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 20%"
+    },
+    {
+      "country": "IT",
+      "seq": 30,
+      "taxCode": "IT_VAT",
+      "taxNameZh": "增值税（IVA）",
+      "rate": "0.22",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 22%"
+    },
+    {
+      "country": "NL",
+      "seq": 30,
+      "taxCode": "NL_VAT",
+      "taxNameZh": "增值税（BTW）",
+      "rate": "0.21",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 21%"
+    },
+    {
+      "country": "BE",
+      "seq": 30,
+      "taxCode": "BE_VAT",
+      "taxNameZh": "增值税（TVA/BTW）",
+      "rate": "0.21",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 21%"
+    },
+    {
+      "country": "AT",
+      "seq": 30,
+      "taxCode": "AT_VAT",
+      "taxNameZh": "增值税（USt）",
+      "rate": "0.20",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 20%"
+    },
+    {
+      "country": "ES",
+      "seq": 30,
+      "taxCode": "ES_VAT",
+      "taxNameZh": "增值税（IVA）",
+      "rate": "0.21",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 21%"
+    },
+    {
+      "country": "PL",
+      "seq": 30,
+      "taxCode": "PL_VAT",
+      "taxNameZh": "增值税（VAT）",
+      "rate": "0.23",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 23%"
+    },
+    {
+      "country": "SE",
+      "seq": 30,
+      "taxCode": "SE_VAT",
+      "taxNameZh": "增值税（Moms）",
+      "rate": "0.25",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 25%"
+    },
+    {
+      "country": "DK",
+      "seq": 30,
+      "taxCode": "DK_VAT",
+      "taxNameZh": "增值税（Moms）",
+      "rate": "0.25",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 25%"
+    },
+    {
+      "country": "FI",
+      "seq": 30,
+      "taxCode": "FI_VAT",
+      "taxNameZh": "增值税（ALV）",
+      "rate": "0.255",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-09-01",
+      "note": "标准税率 25.5%"
+    },
+    {
+      "country": "IE",
+      "seq": 30,
+      "taxCode": "IE_VAT",
+      "taxNameZh": "增值税（VAT）",
+      "rate": "0.23",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 23%"
+    },
+    {
+      "country": "PT",
+      "seq": 30,
+      "taxCode": "PT_VAT",
+      "taxNameZh": "增值税（IVA）",
+      "rate": "0.23",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 23%"
+    },
+    {
+      "country": "GR",
+      "seq": 30,
+      "taxCode": "GR_VAT",
+      "taxNameZh": "增值税（FPA / ΦΠΑ）",
+      "rate": "0.24",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 24%"
+    },
+    {
+      "country": "LU",
+      "seq": 30,
+      "taxCode": "LU_VAT",
+      "taxNameZh": "增值税（TVA）",
+      "rate": "0.17",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 17%"
+    },
+    {
+      "country": "SI",
+      "seq": 30,
+      "taxCode": "SI_VAT",
+      "taxNameZh": "增值税（DDV）",
+      "rate": "0.22",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 22%"
+    },
+    {
+      "country": "SK",
+      "seq": 30,
+      "taxCode": "SK_VAT",
+      "taxNameZh": "增值税（DPH）",
+      "rate": "0.23",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2025-01-01",
+      "note": "标准税率 23%"
+    },
+    {
+      "country": "RO",
+      "seq": 30,
+      "taxCode": "RO_VAT",
+      "taxNameZh": "增值税（TVA）",
+      "rate": "0.21",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2025-08-01",
+      "note": "标准税率 21%"
+    },
+    {
+      "country": "BG",
+      "seq": 30,
+      "taxCode": "BG_VAT",
+      "taxNameZh": "增值税（DDS）",
+      "rate": "0.20",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 20%"
+    },
+    {
+      "country": "HR",
+      "seq": 30,
+      "taxCode": "HR_VAT",
+      "taxNameZh": "增值税（PDV）",
+      "rate": "0.25",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 25%"
+    },
+    {
+      "country": "LT",
+      "seq": 30,
+      "taxCode": "LT_VAT",
+      "taxNameZh": "增值税（PVM）",
+      "rate": "0.21",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 21%"
+    },
+    {
+      "country": "LV",
+      "seq": 30,
+      "taxCode": "LV_VAT",
+      "taxNameZh": "增值税（PVN）",
+      "rate": "0.21",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 21%"
+    },
+    {
+      "country": "EE",
+      "seq": 30,
+      "taxCode": "EE_VAT",
+      "taxNameZh": "增值税（KM）",
+      "rate": "0.24",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2025-07-01",
+      "note": "标准税率 24%"
+    },
+    {
+      "country": "CY",
+      "seq": 30,
+      "taxCode": "CY_VAT",
+      "taxNameZh": "增值税（FPA）",
+      "rate": "0.19",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 19%"
+    },
+    {
+      "country": "MT",
+      "seq": 30,
+      "taxCode": "MT_VAT",
+      "taxNameZh": "增值税（VAT）",
+      "rate": "0.18",
+      "baseComponents": [
+        "cif",
+        "duty"
+      ],
+      "inclusive": false,
+      "refundable": true,
+      "dppFactor": "1",
+      "payableAt": "import",
+      "confidence": "high",
+      "sourceUrl": "https://europa.eu/youreurope/business/finance-and-tax/vat/vat-rules-rates/index_en.htm",
+      "validFrom": "2024-01-01",
+      "note": "标准税率 18%"
+    }
+  ],
+  "measures": [
+    {
+      "country": "US",
+      "measureType": "SECTION_301",
+      "layer": "surtax",
+      "label": "301 清单（旧）25%",
+      "listNo": "9903.88.03",
+      "basis": "ad_valorem",
+      "rate": "0.25",
+      "hsPrefixes": [
+        "870891",
+        "8708"
+      ],
+      "excludes": [],
+      "confidence": "medium",
+      "sourceUrl": "https://ustr.gov/issue-areas/enforcement/section-301-investigations/tariff-actions",
+      "validFrom": "2019-05-10",
+      "note": "8708 归属 List 3 待按 entry date 核 Chapter 99"
+    },
+    {
+      "country": "US",
+      "measureType": "SECTION_301_FL_2026",
+      "layer": "surtax",
+      "label": "301 清单（新）12.5%",
+      "listNo": "FL_2026_CN",
+      "basis": "ad_valorem",
+      "rate": "0.125",
+      "hsPrefixes": [
+        "*"
+      ],
+      "excludes": [
+        "SECTION_232"
+      ],
+      "effectiveFrom": "2026-07-24",
+      "inTransitRule": {
+        "shipBy": "2026-07-24T00:01:00-05:00",
+        "enterBy": "2026-07-28T00:01:00-05:00"
+      },
+      "confidence": "high",
+      "sourceUrl": "https://ustr.gov/issue-areas/enforcement/section-301-investigations",
+      "note": "与旧 301 叠加，与 232 互斥；在途豁免为双条件"
+    },
+    {
+      "country": "US",
+      "measureType": "SECTION_232",
+      "layer": "surtax",
+      "label": "232 钢铝铜附加税（Annex I-B 25%）",
+      "tier232": "ANNEX_IB_25",
+      "annexRef": "Annex I-B（待核）",
+      "basis": "ad_valorem",
+      "rate": "0.25",
+      "hsPrefixes": [
+        "870891",
+        "8708"
+      ],
+      "effectiveFrom": "2026-04-06",
+      "excludes": [
+        "SECTION_301",
+        "SECTION_301_FL_2026"
+      ],
+      "requiresContentProof": true,
+      "allowBelow15": true,
+      "confidence": "low",
+      "sourceUrl": "https://www.whitehouse.gov/presidential-actions/",
+      "note": "8708.91 是否在 232 汽车零部件附件未确认；命中则 301 全部排除（UF-01）"
+    },
+    {
+      "country": "IN",
+      "measureType": "SWS",
+      "layer": "surtax",
+      "label": "社会福利附加税 SWS 10%（按 BCD 计）",
+      "basis": "percent_of_duty",
+      "rate": "0.10",
+      "hsPrefixes": [
+        "*"
+      ],
+      "excludes": [],
+      "confidence": "medium",
+      "sourceUrl": "https://www.cbic.gov.in/",
+      "validFrom": "2024-01-01"
+    },
+    {
+      "country": "TR",
+      "measureType": "TR_EV_SURCHARGE",
+      "layer": "surtax",
+      "label": "对华电动车附加税（存疑）",
+      "basis": "ad_valorem",
+      "rate": "0.40",
+      "hsPrefixes": [
+        "8703"
+      ],
+      "excludes": [],
+      "confidence": "unverified",
+      "sourceUrl": "",
+      "validFrom": "2024-01-01",
+      "note": "案号/扩围/从量下限未给，按 unverified 处理：不进任何对外金额（UF-04 D5）"
+    }
+  ],
+  "charges": [
+    {
+      "country": "US",
+      "code": "MPF",
+      "label": "商品处理费 MPF",
+      "rate": "0.003464",
+      "min": "33.58",
+      "max": "651.50",
+      "enabledByDefault": false,
+      "validFrom": "2025-10-01",
+      "confidence": "medium",
+      "sourceUrl": "https://www.cbp.gov/trade/basic-import-export/user-fee",
+      "note": "上下限按财年调整，每年 10 月复核（BR-19）"
+    },
+    {
+      "country": "US",
+      "code": "HMF",
+      "label": "港口维护费 HMF",
+      "rate": "0.00125",
+      "applies": "ocean",
+      "enabledByDefault": false,
+      "confidence": "high",
+      "sourceUrl": "https://www.cbp.gov/",
+      "validFrom": "2024-01-01",
+      "note": "费率未变，仅补充复核说明"
+    },
+    {
+      "country": "BR",
+      "code": "AFRMM",
+      "label": "海运附加费 AFRMM 8%",
+      "rate": "0.08",
+      "base": "freight",
+      "entersDutyBase": true,
+      "enabledByDefault": false,
+      "confidence": "medium",
+      "sourceUrl": "https://www.gov.br/infraestrutura/",
+      "note": "开启后进 II 税基（黄金用例 F2）",
+      "validFrom": "2024-01-01"
+    },
+    {
+      "country": "BR",
+      "code": "SISCOMEX",
+      "label": "报关系统费 Siscomex",
+      "fixedUsd": "154.23",
+      "enabledByDefault": false,
+      "confidence": "low",
+      "sourceUrl": "https://www.gov.br/receitafederal/",
+      "validFrom": "2024-01-01"
+    }
+  ],
+  "compliance": [
+    {
+      "id": "GPSR",
+      "label": "GPSR 通用产品安全法规",
+      "countries": [
+        "AT",
+        "BE",
+        "BG",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "EE",
+        "ES",
+        "FI",
+        "FR",
+        "GR",
+        "HR",
+        "HU",
+        "IE",
+        "IT",
+        "LT",
+        "LU",
+        "LV",
+        "MT",
+        "NL",
+        "PL",
+        "PT",
+        "RO",
+        "SE",
+        "SI",
+        "SK"
+      ],
+      "channels": [
+        "B2C"
+      ],
+      "onetime": "1620",
+      "annual": "0",
+      "perShipment": "0",
+      "trigger": "manufacturer_or_distance_sale",
+      "mandatory": true,
+      "leadTimeDays": [
+        30,
+        60
+      ],
+      "confidence": "medium",
+      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2023/988/oj",
+      "note": "是否以制造商身份投放市场决定义务，不能按渠道一刀切"
+    },
+    {
+      "id": "EPR",
+      "label": "EPR 生产者责任延伸注册",
+      "countries": [
+        "AT",
+        "BE",
+        "BG",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "EE",
+        "ES",
+        "FI",
+        "FR",
+        "GR",
+        "HR",
+        "HU",
+        "IE",
+        "IT",
+        "LT",
+        "LU",
+        "LV",
+        "MT",
+        "NL",
+        "PL",
+        "PT",
+        "RO",
+        "SE",
+        "SI",
+        "SK"
+      ],
+      "channels": [
+        "B2C"
+      ],
+      "onetime": "0",
+      "annual": "650",
+      "perShipment": "0",
+      "trigger": "first_placing_on_market",
+      "mandatory": true,
+      "leadTimeDays": [
+        15,
+        45
+      ],
+      "confidence": "high",
+      "sourceUrl": "https://environment.ec.europa.eu/topics/circular-economy/extended-producer-responsibility_en"
+    },
+    {
+      "id": "PRODUCT_LIABILITY",
+      "label": "产品责任险",
+      "countries": [
+        "AT",
+        "BE",
+        "BG",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "EE",
+        "ES",
+        "FI",
+        "FR",
+        "GR",
+        "HR",
+        "HU",
+        "IE",
+        "IT",
+        "LT",
+        "LU",
+        "LV",
+        "MT",
+        "NL",
+        "PL",
+        "PT",
+        "RO",
+        "SE",
+        "SI",
+        "SK"
+      ],
+      "channels": [
+        "B2C"
+      ],
+      "onetime": "0",
+      "annual": "0",
+      "perShipment": "650",
+      "trigger": "optional",
+      "mandatory": false,
+      "leadTimeDays": [
+        3,
+        10
+      ],
+      "confidence": "unverified",
+      "sourceUrl": "",
+      "note": "欧盟无普遍强制，逐国核；默认不计（v2 §10.5）"
+    },
+    {
+      "id": "SABER",
+      "label": "SABER 符合性认证",
+      "countries": [
+        "SA"
+      ],
+      "channels": [
+        "B2B",
+        "B2C"
+      ],
+      "onetime": "800",
+      "annual": "1200",
+      "perShipment": "0",
+      "trigger": "regulated_product",
+      "mandatory": true,
+      "leadTimeDays": [
+        30,
+        90
+      ],
+      "confidence": "medium",
+      "sourceUrl": "https://saber.sa/",
+      "note": "覆盖范围为受管制产品，非全部货物（UF-04 D4）"
+    },
+    {
+      "id": "ECE_EMARK",
+      "label": "ECE/E-mark 汽配认证",
+      "countries": [
+        "AT",
+        "BE",
+        "BG",
+        "CY",
+        "CZ",
+        "DE",
+        "DK",
+        "EE",
+        "ES",
+        "FI",
+        "FR",
+        "GR",
+        "HR",
+        "HU",
+        "IE",
+        "IT",
+        "LT",
+        "LU",
+        "LV",
+        "MT",
+        "NL",
+        "PL",
+        "PT",
+        "RO",
+        "SE",
+        "SI",
+        "SK"
+      ],
+      "channels": [
+        "B2B",
+        "B2C"
+      ],
+      "onetime": "0",
+      "annual": "0",
+      "perShipment": "0",
+      "trigger": "automotive_parts",
+      "mandatory": true,
+      "leadTimeDays": [
+        45,
+        120
+      ],
+      "confidence": "high",
+      "sourceUrl": "https://unece.org/transport/vehicle-regulations",
+      "note": "灯具 R148/149/150、制动 R13 等；成本未入库，仅进入要办事项"
+    }
+  ],
+  "fta": [
+    {
+      "code": "RCEP",
+      "label": "RCEP 区域全面经济伙伴关系",
+      "members": [
+        "CN",
+        "JP",
+        "KR",
+        "AU",
+        "NZ",
+        "ID",
+        "MY",
+        "PH",
+        "SG",
+        "TH",
+        "VN",
+        "BN",
+        "KH",
+        "LA",
+        "MM"
+      ],
+      "confidence": "high",
+      "sourceUrl": "http://fta.mofcom.gov.cn/rcep/"
+    },
+    {
+      "code": "AIFTA",
+      "label": "中国—东盟自贸协定",
+      "members": [
+        "CN",
+        "BN",
+        "KH",
+        "ID",
+        "LA",
+        "MY",
+        "MM",
+        "PH",
+        "SG",
+        "TH",
+        "VN"
+      ],
+      "confidence": "high",
+      "sourceUrl": "http://fta.mofcom.gov.cn/"
+    }
+  ],
+  "dualUse": [
+    {
+      "id": "DU-OPTIC",
+      "label": "光学/红外成像设备",
+      "countries": [
+        "TR",
+        "IN",
+        "BR"
+      ],
+      "hsPrefixes": [
+        "9005",
+        "9027",
+        "8543"
+      ],
+      "severity": "flag",
+      "requiredLicense": {
+        "type": "两用物项出口许可证",
+        "authority": "商务部产业安全与进出口管制局",
+        "leadTimeDays": [
+          20,
+          45
+        ]
+      },
+      "confidence": "medium",
+      "sourceUrl": "https://www.mofcom.gov.cn/"
+    },
+    {
+      "id": "DU-ENDUSER",
+      "label": "最终用户/用途命中军事或涉恐",
+      "countries": [
+        "*"
+      ],
+      "hsPrefixes": [
+        "*"
+      ],
+      "severity": "blocked",
+      "legalBasis": "《两用物项出口管制条例》禁止性规定",
+      "requiredLicense": null,
+      "confidence": "high",
+      "sourceUrl": "https://www.mofcom.gov.cn/"
+    }
+  ],
+  "policyCalendar": [
+    {
+      "date": "2026-04-06",
+      "label": "232 钢铝铜按完整海关估价征收生效",
+      "type": "measure",
+      "sourceUrl": "https://www.whitehouse.gov/presidential-actions/"
+    },
+    {
+      "date": "2026-07-24",
+      "label": "新 301（12.5%）生效 · 装船截止 7-24 00:01",
+      "type": "measure",
+      "sourceUrl": "https://ustr.gov/"
+    },
+    {
+      "date": "2026-07-28",
+      "label": "新 301 在途豁免 · 申报截止 7-28 00:01",
+      "type": "measure",
+      "sourceUrl": "https://ustr.gov/"
+    },
+    {
+      "date": "2026-12-01",
+      "label": "HS2027 产品提醒起点（非法定生效日）",
+      "type": "version",
+      "sourceUrl": ""
+    },
+    {
+      "date": "2027-01-01",
+      "label": "HS2027 各国实施时点（待核，UF-05）",
+      "type": "version",
+      "sourceUrl": ""
+    }
+  ]
+}

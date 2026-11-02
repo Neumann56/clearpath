@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "看懂外贸",
+  "usingComponents": {
+    "empty-state": "/components/empty-state/index"
+  }
+}

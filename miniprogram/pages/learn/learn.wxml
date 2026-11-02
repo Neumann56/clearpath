@@ -1,0 +1,47 @@
+<view class="wrap">
+
+  <view wx:if="{{loading}}" class="loading">正在取视频清单…</view>
+
+  <empty-state wx:elif="{{err}}" icon="▷" text="{{err}}" action="回首页" bind:act="goHome" />
+
+  <block wx:else>
+    <view class="banner info">
+      按「先看哪条」排好序，每条都写清看完能答上什么。共 {{count}} 条，内容核验于 {{compiledAt}}。
+      小程序里放不了 B 站播放器，点卡片复制链接去浏览器看。
+    </view>
+
+    <view class="vgroup" wx:for="{{groups}}" wx:key="id" wx:for-item="g">
+      <view class="gt">{{g.title}}</view>
+      <view class="gw">{{g.why}}</view>
+
+      <view
+        class="vcard {{v.featured ? 'feat' : ''}}"
+        wx:for="{{g.videos}}"
+        wx:key="id"
+        wx:for-item="v"
+        data-url="{{v.watchUrl}}"
+        bindtap="openVideo"
+      >
+        <view class="vcover {{v.dead ? 'dead' : ''}}">
+          <image
+            wx:if="{{!v.dead}}"
+            src="{{v.cover}}"
+            mode="aspectFill"
+            lazy-load
+            data-gi="{{v.gi}}"
+            data-vi="{{v.vi}}"
+            binderror="onCoverErr"
+          />
+          <view wx:else class="ph">封面在微信里打不开<br />点开去 B 站看</view>
+          <view class="dur">{{v.durationText}}</view>
+        </view>
+        <view class="vbody">
+          <view class="t">{{v.title}}</view>
+          <view class="a">{{v.author}} · {{v.playText}} 次播放</view>
+          <view class="k">{{v.takeaway}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+</view>

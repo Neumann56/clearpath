@@ -1,0 +1,123 @@
+<view wx:if="{{loading}}" class="loading">正在打开这份报告…</view>
+
+<view wx:elif="{{err}}">
+  <empty-state icon="!" text="{{err}}" action="回历史报告" bind:act="goBack" />
+</view>
+
+<view wx:else class="wrap">
+
+  <view wx:if="{{demoMode || v.isDemo}}" class="banner warn">
+    这是<text style="font-weight:600">演示数据</text>，不是刚算出来的。连上服务器后才会显示你这票的真实结果。
+  </view>
+
+  <view class="rhead">
+    <view class="state {{v.stateCls}}">{{v.stateText}}</view>
+    <view class="t">{{v.title}}</view>
+    <view class="s">{{v.sub}}</view>
+  </view>
+
+  <amount-dual
+    landed="{{v.landed}}"
+    cash="{{v.cash}}"
+    note="{{v.dualNote}}"
+    gap="{{v.hasGap}}"
+    gaptext="{{v.gapAmount}}"
+    gapsub="{{v.gapRatio}}"
+  />
+
+  <!-- ① 钱是怎么算出来的 -->
+  <view class="fold">
+    <view class="fold-hd" data-k="money" bindtap="toggle">
+      <view class="idx">1</view>
+      <view>钱是怎么算出来的</view>
+      <view class="caret">{{open.money ? '⌄' : '›'}}</view>
+    </view>
+    <view wx:if="{{open.money}}" class="fold-bd">
+      <cost-list rows="{{v.lines}}" />
+      <block wx:if="{{v.hasExpected}}">
+        <view class="spacer"></view>
+        <cost-list rows="{{v.totals}}" />
+        <view class="tiny muted" style="margin-top:18rpx">税率与置信度都来自参数库，每个数都能追到出处。逐行来源在电脑版。</view>
+      </block>
+    </view>
+  </view>
+
+  <!-- ② 还没算准的：默认展开，空也要出现 -->
+  <view class="fold">
+    <view class="fold-hd" data-k="todo" bindtap="toggle">
+      <view class="idx">2</view>
+      <view>还没算准的</view>
+      <view class="cnt">{{v.warns.length}} 项</view>
+      <view class="caret">{{open.todo ? '⌄' : '›'}}</view>
+    </view>
+    <view wx:if="{{open.todo}}" class="fold-bd">
+      <view wx:if="{{v.noWarn}}" class="okempty">本票没有待核项。所有用到的参数都有出处。</view>
+      <view wx:for="{{v.warns}}" wx:key="i" class="warn {{item.cls}}">
+        <text class="wt">{{item.title}}</text>
+        <view>{{item.meta}}</view>
+        <text wx:if="{{item.act}}" class="act">{{item.act}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ③ 要办的事 -->
+  <view class="fold">
+    <view class="fold-hd" data-k="action" bindtap="toggle">
+      <view class="idx">3</view>
+      <view>要办的事</view>
+      <view class="cnt">{{v.actions.length}} 项</view>
+      <view class="caret">{{open.action ? '⌄' : '›'}}</view>
+    </view>
+    <view wx:if="{{open.action}}" class="fold-bd">
+      <cost-list rows="{{v.actions}}" empty="这票不需要额外办证。" />
+    </view>
+  </view>
+
+  <!-- ④ 别的可能 -->
+  <view class="fold">
+    <view class="fold-hd" data-k="more" bindtap="toggle">
+      <view class="idx">4</view>
+      <view>别的可能</view>
+      <view class="cnt">最坏值 / 敏感度 / 假设</view>
+      <view class="caret">{{open.more ? '⌄' : '›'}}</view>
+    </view>
+    <view wx:if="{{open.more}}" class="fold-bd">
+      <view class="small muted" style="margin-bottom:6rpx">三种情况</view>
+      <cost-list rows="{{v.range}}" empty="这票没有可比区间。" />
+
+      <view class="small muted" style="margin:26rpx 0 6rpx">哪个变量最要命</view>
+      <cost-list rows="{{v.sens}}" empty="暂无明显敏感项。" />
+
+      <view class="small muted" style="margin:26rpx 0 6rpx">我替你默认了什么</view>
+      <cost-list rows="{{v.assume}}" empty="没有替你默认任何值。" />
+    </view>
+  </view>
+
+  <!-- ⑤ 时间节点 -->
+  <view class="fold">
+    <view class="fold-hd" data-k="time" bindtap="toggle">
+      <view class="idx">5</view>
+      <view>时间节点</view>
+      <view class="cnt">{{v.time.length}} 个</view>
+      <view class="caret">{{open.time ? '⌄' : '›'}}</view>
+    </view>
+    <view wx:if="{{open.time}}" class="fold-bd">
+      <view class="cal-item {{item.cls}}" wx:for="{{v.time}}" wx:key="i">
+        <view class="cal-date">{{item.date}}</view>
+        <view class="cal-b">
+          <view class="cal-t">{{item.label}}</view>
+          <view class="cal-m">{{item.meta}}</view>
+        </view>
+      </view>
+      <view wx:if="{{v.time.length === 0}}" class="small muted">本票没有相关的时间节点。</view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="tiny muted">
+      这份报告不会因为参数库更新而改金额。校准只用于改进参数，历史金额永久冻结。
+    </view>
+    <view class="btn ghost" style="margin-top:20rpx" bindtap="goPrint">要逐行来源 / 打印存档</view>
+  </view>
+
+</view>

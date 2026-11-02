@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "历史报告",
+  "usingComponents": {
+    "empty-state": "/components/empty-state/index"
+  }
+}

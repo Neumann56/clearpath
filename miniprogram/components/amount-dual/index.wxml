@@ -1,0 +1,22 @@
+<view class="ad {{size === 'md' ? 'sm' : ''}}">
+  <view class="cell main">
+    <view class="k">真实成本</view>
+    <view class="v">{{landed}}</view>
+    <view class="n">毛利按这个算</view>
+  </view>
+  <view class="cell">
+    <view class="k">需备现金</view>
+    <view class="v">{{cash}}</view>
+    <view class="n">现金流按这个</view>
+  </view>
+</view>
+
+<view class="note">
+  <view class="neq">≠</view>
+  <view class="nt">{{note}}</view>
+</view>
+
+<view wx:if="{{gap}}" class="gap">
+  <view class="gv">{{gaptext}}</view>
+  <view class="gs">{{gapsub}}</view>
+</view>

@@ -1,0 +1,60 @@
+{
+  "description": "通途 CLEARPATH · 到岸成本预演（小程序端）",
+  "miniprogramRoot": "./",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "compileType": "miniprogram",
+  "libVersion": "3.5.0",
+  "appid": "touristappid",
+  "projectname": "tantu",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "报告（离线示例单）",
+          "pathName": "pages/report/report",
+          "query": "id=demo",
+          "scene": null
+        },
+        {
+          "name": "首页（分享落地）",
+          "pathName": "pages/index/index",
+          "query": "from=share",
+          "scene": null
+        },
+        {
+          "name": "预演",
+          "pathName": "pages/new/new",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

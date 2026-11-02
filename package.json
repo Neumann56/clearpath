@@ -1,0 +1,24 @@
+{
+  "name": "tantu-clearpath",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "通途 CLEARPATH · 出口计税引擎（MVP）：两个口径 + 待核标价 + 双分支",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "copy:lint": "node scripts/copy-lint.js",
+    "perf": "node scripts/perf.js",
+    "check": "node scripts/verify.js",
+    "videos:check": "node scripts/check-videos.js",
+    "online:check": "node scripts/check-online.js",
+    "e2e:doc": "node scripts/e2e-doc-intake.js",
+    "e2e:learn": "node scripts/e2e-learn.js",
+    "e2e:all": "node scripts/e2e-doc-all.js",
+    "deploy:aliyun": "node scripts/deploy-aliyun.js",
+    "check:online": "node scripts/check-online.js"
+  }
+}

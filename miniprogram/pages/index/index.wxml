@@ -1,0 +1,64 @@
+<view class="wrap">
+
+  <view wx:if="{{mockMode}}" class="banner info">
+    当前是<text style="font-weight:600">离线演示模式</text>（config.js 里 MODE = mock）。完整流程都能走，但所有数字是样例。
+  </view>
+  <view wx:elif="{{demoMode}}" class="banner warn">
+    连不上服务器，当前显示<text style="font-weight:600">演示数据</text>。按钮仍可点，但算出的是样例，不是实时的。
+  </view>
+
+  <view wx:if="{{fromShare}}" class="banner info">
+    你从分享链接进来。下面这两个数是一票真实算过的样例，点开能看完整报告。
+  </view>
+
+  <view class="kicker">报价前 3 分钟</view>
+  <view class="h1">先把这票货的账<text class="h1-em">算清</text>，再报价。</view>
+  <view class="lead">给两个数：真实成本、清关需备现金。再加一份标了价的「算不准清单」。</view>
+
+  <view class="card" style="margin-top:28rpx">
+    <textarea
+      class="nl"
+      value="{{text}}"
+      bindinput="onInput"
+      placeholder="一句话说清这票货，例：8708.91 散热器 1200 件，FOB 48000 美元，运到匈牙利"
+      maxlength="200"
+      auto-height
+    />
+    <scroll-view class="chips" scroll-x>
+      <view class="chip" wx:for="{{chips}}" wx:key="label" data-fill="{{item.fill}}" bindtap="onChip">{{item.label}}</view>
+    </scroll-view>
+    <view class="btn {{busy ? 'disabled' : ''}}" bindtap="onGo">{{busy ? '正在读…' : '试算这票货'}}</view>
+    <view wx:if="{{hint}}" class="small neg" style="margin-top:12rpx">{{hint}}</view>
+  </view>
+
+  <view class="tapdemo" bindtap="goDemo">
+    <amount-dual
+      size="md"
+      landed="{{sample ? sample.landedCost : '—'}}"
+      cash="{{sample ? sample.cashRequired : '—'}}"
+    />
+  </view>
+  <view wx:if="{{sample}}" class="tiny muted" style="text-align:center;margin:-14rpx 0 26rpx">{{sample.note}}</view>
+
+  <view class="entries">
+    <view class="entry" bindtap="goNew">
+      <view class="t">逐项填</view>
+      <view class="s">七个格，慢慢填</view>
+    </view>
+    <view class="entry" bindtap="goCalendar">
+      <view class="t">政策日历</view>
+      <view class="s">什么时候申报</view>
+    </view>
+    <view class="entry" bindtap="goLearn">
+      <view class="t">看懂外贸</view>
+      <view class="s">FOB/CIF 是什么</view>
+    </view>
+  </view>
+
+  <view class="cov">
+    <view>参数库覆盖 <text class="cov-b">{{markets}}</text> 个市场 × <text class="cov-b">{{cats}}</text> 个品类，共 <text class="cov-b">{{cells}}</text> 个能直接出数的组合。</view>
+    <view style="margin-top:8rpx">品类：{{catText}}。</view>
+    <view style="margin-top:8rpx">其中 <text class="cov-b">{{charges}}</text> 个市场已录清关规费，其余在报告里明说「参数未入库」，不填 0 蒙过去。</view>
+  </view>
+
+</view>

@@ -1,0 +1,40 @@
+[Unit]
+Description=Tantu CLEARPATH - export duty calculator
+Documentation=https://github.com/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tantu
+Group=tantu
+WorkingDirectory=/opt/tantu
+
+# 部署环境靠「有没有 PORT」判断绑 0.0.0.0，这里显式给全，不依赖推断
+Environment=NODE_ENV=production
+Environment=HOST=0.0.0.0
+Environment=PORT=80
+
+# 绑 80 需要特权端口能力；不用 root 跑进程，只给这一个能力
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+ExecStart=/usr/local/bin/node server.js
+Restart=always
+RestartSec=3
+# 反复崩溃时别无限重启：30 秒内超过 5 次就放弃，留日志给人看
+StartLimitIntervalSec=30
+StartLimitBurst=5
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=tantu
+
+# 只允许写自己的目录：报告、草稿、日志都在这两处
+ReadWritePaths=/opt/tantu/data /opt/tantu/logs
+ProtectSystem=full
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

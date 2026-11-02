@@ -1,0 +1,363 @@
+/* 通途小程序公共样式
+ *
+ * 尺寸一律 rpx（750 = 屏宽），不用 px：iPhone SE 到 iPad 都是一个比例。
+ * 不依赖 CSS 变量——部分安卓机的旧基础库对 var() 支持不稳，
+ * 出事时表现是整片背景变白，很难查。
+ */
+
+page {
+  background: #f5f7f9;
+  color: #141a1f;
+  font-size: 30rpx;
+  line-height: 1.62;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { padding: 28rpx 28rpx 60rpx; }
+
+/* ---------- 卡片 ---------- */
+.card {
+  background: #fff;
+  border: 1rpx solid #e2e7ec;
+  border-radius: 24rpx;
+  padding: 28rpx;
+  margin-bottom: 22rpx;
+}
+.card-title { font-size: 32rpx; font-weight: 600; margin-bottom: 10rpx; }
+.card-sub { font-size: 24rpx; color: #6c7a86; line-height: 1.6; }
+
+.muted { color: #6c7a86; }
+.small { font-size: 25rpx; }
+.tiny { font-size: 22rpx; }
+.num { font-variant-numeric: tabular-nums; }
+.pos { color: #17694a; }
+.neg { color: #b3341f; }
+
+/* ---------- 首页 ---------- */
+.kicker {
+  display: inline-block;
+  font-size: 22rpx; letter-spacing: 2rpx;
+  color: #0f4d5c; background: #e8f2f5;
+  padding: 6rpx 18rpx; border-radius: 100rpx;
+  margin-bottom: 20rpx;
+}
+.h1 {
+  font-size: 50rpx; line-height: 1.34; font-weight: 700;
+  letter-spacing: -1rpx; margin-bottom: 14rpx;
+}
+.h1-em { color: #0f4d5c; }
+.lead { font-size: 27rpx; color: #3d4a55; line-height: 1.7; }
+
+.nl {
+  width: 100%; min-height: 168rpx; padding: 24rpx;
+  font-size: 30rpx; line-height: 1.6;
+  background: #fbfcfd; border: 1rpx solid #e2e7ec;
+  border-radius: 20rpx; box-sizing: border-box;
+}
+
+.chips { display: flex; flex-wrap: nowrap; overflow-x: auto; padding: 20rpx 0 6rpx; white-space: nowrap; }
+.chip {
+  flex: 0 0 auto; font-size: 24rpx; color: #3d4a55;
+  background: #eef1f4; padding: 10rpx 20rpx; border-radius: 100rpx;
+  margin-right: 14rpx;
+}
+.chip.on { background: #e8f2f5; color: #0f4d5c; }
+
+/* ---------- 按钮 ---------- */
+.btn {
+  display: flex; align-items: center; justify-content: center;
+  height: 92rpx; font-size: 31rpx; font-weight: 600;
+  color: #fff; background: #0f4d5c; border-radius: 22rpx;
+  margin-top: 16rpx;
+}
+.btn.ghost { background: #fff; color: #3d4a55; border: 1rpx solid #e2e7ec; font-weight: 500; }
+.btn.disabled { background: #c8d2d8; color: #f4f7f8; }
+
+/* ---------- 双口径 ---------- */
+.dual {
+  display: flex; background: #fff;
+  border: 1rpx solid #e2e7ec; border-radius: 24rpx;
+  overflow: hidden; margin-bottom: 12rpx;
+}
+.dcell { flex: 1; padding: 26rpx 24rpx 22rpx; }
+.dcell + .dcell { border-left: 1rpx solid #e2e7ec; }
+.dcell .k { font-size: 23rpx; color: #6c7a86; margin-bottom: 6rpx; }
+.dcell .v {
+  font-size: 48rpx; font-weight: 700; line-height: 1.15;
+  letter-spacing: -1rpx; white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.dcell.main .v { color: #0f4d5c; }
+.dcell .n { font-size: 22rpx; color: #6c7a86; margin-top: 4rpx; }
+
+.dual-note {
+  display: flex; align-items: flex-start; gap: 10rpx;
+  font-size: 23rpx; color: #6c7a86; line-height: 1.6;
+  margin: 0 8rpx 26rpx;
+}
+.dual-note .neq {
+  flex: 0 0 auto; width: 30rpx; height: 30rpx; border-radius: 50%;
+  background: #eef1f4; color: #3d4a55;
+  font-size: 20rpx; text-align: center; line-height: 30rpx; margin-top: 3rpx;
+}
+
+/* ---------- 入口 ---------- */
+.entries { display: flex; gap: 16rpx; margin-bottom: 26rpx; }
+.entry {
+  flex: 1; padding: 24rpx 18rpx;
+  background: #fff; border: 1rpx solid #e2e7ec; border-radius: 20rpx;
+}
+.entry .t { font-size: 27rpx; font-weight: 600; margin-bottom: 4rpx; }
+.entry .s { font-size: 22rpx; color: #6c7a86; line-height: 1.45; }
+
+.cov { font-size: 23rpx; color: #6c7a86; line-height: 1.8; text-align: center; padding: 0 10rpx; }
+.cov-b { color: #3d4a55; font-weight: 600; }
+
+/* ---------- 表单 ---------- */
+.field { margin-bottom: 30rpx; }
+.field .lb {
+  display: flex; align-items: center;
+  font-size: 26rpx; color: #3d4a55; font-weight: 500; margin-bottom: 12rpx;
+}
+.field .req { color: #b3341f; margin-left: 6rpx; }
+.field .hint { font-size: 23rpx; color: #6c7a86; line-height: 1.6; margin-top: 10rpx; }
+
+.input {
+  width: 100%; height: 92rpx; line-height: 92rpx; padding: 0 26rpx;
+  font-size: 31rpx; color: #141a1f; background: #fbfcfd;
+  border: 1rpx solid #e2e7ec; border-radius: 20rpx; box-sizing: border-box;
+}
+.input.ph { color: #a9b5bd; }
+.picker-val {
+  width: 100%; height: 92rpx; line-height: 92rpx; padding: 0 26rpx;
+  background: #fbfcfd; border: 1rpx solid #e2e7ec; border-radius: 20rpx;
+  box-sizing: border-box; font-size: 31rpx;
+}
+
+.seg { display: flex; background: #eef1f4; border-radius: 20rpx; padding: 8rpx; }
+.seg .s {
+  flex: 1; height: 74rpx; line-height: 74rpx; text-align: center;
+  font-size: 27rpx; color: #3d4a55; border-radius: 16rpx;
+}
+.seg .s.on { background: #fff; color: #0f4d5c; font-weight: 600; }
+
+.adv-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24rpx; border: 1rpx dashed #e2e7ec; border-radius: 20rpx;
+  background: #fcfdfd; font-size: 26rpx; color: #3d4a55; margin-bottom: 26rpx;
+}
+
+/* 底部固定提交条 */
+.footbar {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  padding: 16rpx 28rpx calc(16rpx + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1rpx solid #e2e7ec;
+  z-index: 20;
+}
+.footbar .est { display: flex; margin-bottom: 12rpx; }
+.footbar .est .e { flex: 1; font-size: 22rpx; color: #6c7a86; }
+.footbar .est .e .v {
+  font-size: 30rpx; color: #141a1f; font-weight: 600;
+  font-variant-numeric: tabular-nums; margin-left: 8rpx;
+}
+
+/* ---------- 报告 ---------- */
+.state {
+  display: inline-block; font-size: 22rpx; padding: 5rpx 16rpx;
+  border-radius: 100rpx; background: #e9f5ef; color: #17694a; margin-bottom: 16rpx;
+}
+.state.gap, .state.confirm { background: #fdf3e3; color: #b8791a; }
+.state.block { background: #fbeceb; color: #b3341f; }
+
+.rhead { margin-bottom: 22rpx; }
+.rhead .t { font-size: 38rpx; font-weight: 700; letter-spacing: -0.5rpx; }
+.rhead .s { font-size: 23rpx; color: #6c7a86; margin-top: 4rpx; }
+
+.gapbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20rpx 24rpx; margin-bottom: 22rpx;
+  background: #fdf3e3; border-radius: 20rpx;
+  font-size: 24rpx; color: #7d5310;
+}
+.gapbar .v { font-size: 30rpx; font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.fold {
+  background: #fff; border: 1rpx solid #e2e7ec;
+  border-radius: 24rpx; margin-bottom: 20rpx; overflow: hidden;
+}
+.fold-hd {
+  display: flex; align-items: center;
+  padding: 26rpx 28rpx; font-size: 29rpx; font-weight: 600;
+}
+.fold-hd .idx {
+  flex: 0 0 auto; width: 38rpx; height: 38rpx; border-radius: 50%;
+  background: #e8f2f5; color: #0f4d5c;
+  font-size: 22rpx; text-align: center; line-height: 38rpx;
+  margin-right: 14rpx; font-weight: 700;
+}
+.fold-hd .cnt { margin-left: auto; font-size: 23rpx; font-weight: 400; color: #6c7a86; }
+.fold-hd .caret { color: #6c7a86; font-size: 26rpx; margin-left: 12rpx; }
+.fold-bd { padding: 0 28rpx 26rpx; }
+
+.line { display: flex; align-items: baseline; padding: 18rpx 0; border-top: 1rpx solid #eef1f4; }
+.line:first-child { border-top: 0; }
+.line .k { flex: 1; font-size: 26rpx; color: #3d4a55; min-width: 0; }
+.line .k .i { display: block; font-size: 22rpx; color: #6c7a86; margin-top: 2rpx; line-height: 1.5; }
+.line .v {
+  flex: 0 0 auto; font-size: 28rpx; font-weight: 600;
+  font-variant-numeric: tabular-nums; white-space: nowrap; margin-left: 16rpx;
+}
+.line .v.q { color: #6c7a86; font-weight: 400; }
+.line.tot { border-top: 2rpx solid #e2e7ec; margin-top: 4rpx; padding-top: 22rpx; }
+.line.tot .v { font-size: 34rpx; color: #0f4d5c; }
+
+.tag {
+  display: inline-block; font-size: 20rpx; line-height: 1.7;
+  padding: 0 10rpx; border-radius: 8rpx; margin-left: 8rpx;
+  background: #eef1f4; color: #6c7a86;
+}
+.tag.high { background: #e9f5ef; color: #17694a; }
+.tag.medium { background: #fdf3e3; color: #b8791a; }
+.tag.low { background: #fbeceb; color: #b3341f; }
+
+.warn {
+  padding: 22rpx 24rpx; margin-bottom: 16rpx;
+  background: #fdf3e3; border-radius: 18rpx;
+  font-size: 26rpx; color: #7d5310; line-height: 1.6;
+}
+.warn.gap { background: #fbeceb; color: #7d2818; }
+.warn .wt { display: block; font-weight: 600; margin-bottom: 4rpx; }
+.warn .act { display: block; font-size: 23rpx; margin-top: 8rpx; opacity: 0.86; }
+
+.okempty {
+  padding: 24rpx; border-radius: 18rpx;
+  background: #e9f5ef; color: #17694a; font-size: 26rpx;
+}
+
+/* ---------- 列表 ---------- */
+.ritem {
+  display: block; padding: 26rpx 28rpx; margin-bottom: 18rpx;
+  background: #fff; border: 1rpx solid #e2e7ec; border-radius: 22rpx;
+}
+.ritem .r1 { display: flex; align-items: center; margin-bottom: 6rpx; }
+.ritem .cn { font-size: 29rpx; font-weight: 600; }
+.ritem .hs { font-size: 23rpx; color: #6c7a86; margin-left: 12rpx; font-variant-numeric: tabular-nums; }
+.ritem .dot { width: 12rpx; height: 12rpx; border-radius: 50%; margin-left: auto; }
+.ritem .dot.g { background: #17694a; }
+.ritem .dot.a { background: #b8791a; }
+.ritem .dot.r { background: #b3341f; }
+.ritem .r2 { display: flex; margin-top: 10rpx; }
+.ritem .r2 .c { margin-right: 40rpx; font-size: 22rpx; color: #6c7a86; }
+.ritem .r2 .c .v {
+  display: block; font-size: 32rpx; color: #141a1f;
+  font-weight: 600; font-variant-numeric: tabular-nums;
+}
+.ritem .r3 { font-size: 22rpx; color: #6c7a86; margin-top: 10rpx; }
+
+/* ---------- 日历 ---------- */
+.cal-month { font-size: 24rpx; font-weight: 600; color: #6c7a86; letter-spacing: 1rpx; margin: 30rpx 6rpx 14rpx; }
+.cal-item { display: flex; padding: 20rpx 0; border-top: 1rpx solid #eef1f4; }
+.cal-item:first-child { border-top: 0; }
+.cal-date {
+  flex: 0 0 92rpx; font-size: 23rpx; color: #6c7a86;
+  font-variant-numeric: tabular-nums; padding-top: 2rpx;
+}
+.cal-item.soon .cal-date { color: #b8791a; font-weight: 600; }
+.cal-item.in .cal-date, .cal-item.in .cal-t { color: #6c7a86; }
+.cal-b { flex: 1; min-width: 0; }
+.cal-t { font-size: 27rpx; line-height: 1.5; }
+.cal-m { font-size: 22rpx; color: #6c7a86; margin-top: 4rpx; }
+
+.spanbox {
+  padding: 22rpx 24rpx; margin-bottom: 16rpx;
+  background: #e8f2f5; border-radius: 18rpx;
+  font-size: 24rpx; color: #0d4653; line-height: 1.65;
+}
+.spanbox .st { display: block; font-weight: 600; font-size: 26rpx; margin-bottom: 6rpx; }
+
+.banner {
+  padding: 18rpx 24rpx; margin-bottom: 24rpx; border-radius: 18rpx;
+  font-size: 24rpx; line-height: 1.65;
+}
+.banner.info { background: #e8f2f5; color: #0d4653; }
+.banner.warn { background: #fdf3e3; color: #7d5310; }
+
+/* ---------- 视频 ---------- */
+.vgroup { margin-bottom: 36rpx; }
+.vgroup .gt { font-size: 32rpx; font-weight: 600; margin-bottom: 6rpx; }
+.vgroup .gw { font-size: 24rpx; color: #6c7a86; line-height: 1.65; margin-bottom: 20rpx; }
+
+.vcard {
+  display: flex; padding: 20rpx; margin-bottom: 18rpx;
+  background: #fff; border: 1rpx solid #e2e7ec; border-radius: 22rpx;
+}
+.vcard.feat { border-color: #e8f2f5; background: #fcfefe; }
+.vcover {
+  flex: 0 0 200rpx; height: 120rpx; border-radius: 14rpx;
+  background: #eef1f4; position: relative; overflow: hidden;
+}
+.vcard.feat .vcover { flex: 0 0 240rpx; height: 142rpx; }
+.vcover image { width: 100%; height: 100%; display: block; }
+.vcover .dur {
+  position: absolute; right: 8rpx; bottom: 8rpx;
+  font-size: 19rpx; color: #fff; background: rgba(0, 0, 0, 0.62);
+  padding: 0 8rpx; border-radius: 6rpx; font-variant-numeric: tabular-nums;
+}
+.vbody { flex: 1; min-width: 0; margin-left: 20rpx; }
+.vbody .t { font-size: 27rpx; font-weight: 500; line-height: 1.45; }
+.vbody .a { font-size: 21rpx; color: #6c7a86; margin-top: 6rpx; }
+.vbody .k { font-size: 22rpx; color: #0f4d5c; margin-top: 6rpx; line-height: 1.5; }
+
+/* ---------- 聊天 ---------- */
+.chat { padding: 28rpx 24rpx 180rpx; }
+.msg { display: flex; margin-bottom: 26rpx; }
+.msg.user { justify-content: flex-end; }
+.bub {
+  max-width: 80%; padding: 20rpx 26rpx; border-radius: 26rpx;
+  font-size: 29rpx; line-height: 1.62; word-break: break-word;
+}
+.msg.bot .bub { background: #fff; border: 1rpx solid #e2e7ec; border-top-left-radius: 10rpx; }
+.msg.user .bub { background: #0f4d5c; color: #fff; border-top-right-radius: 10rpx; }
+.msg.note .bub { background: #fdf3e3; color: #7d5310; font-size: 25rpx; border: 0; }
+
+.chatin {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: flex-end;
+  padding: 16rpx 24rpx calc(16rpx + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1rpx solid #e2e7ec; z-index: 20;
+}
+.chatin textarea {
+  flex: 1; min-height: 76rpx; max-height: 200rpx;
+  padding: 16rpx 24rpx; font-size: 29rpx; line-height: 1.5;
+  background: #f6f8f9; border: 1rpx solid #e2e7ec;
+  border-radius: 38rpx; box-sizing: border-box; width: auto;
+}
+.chatin .send {
+  flex: 0 0 auto; width: 80rpx; height: 76rpx; line-height: 76rpx;
+  text-align: center; background: #0f4d5c; color: #fff;
+  border-radius: 38rpx; font-size: 28rpx; margin-left: 14rpx;
+}
+.chatin .send.off { background: #c8d2d8; }
+
+/* ---------- 空状态 / 提示 ---------- */
+.empty { padding: 100rpx 40rpx; text-align: center; color: #6c7a86; }
+.empty .e1 { font-size: 60rpx; opacity: 0.45; }
+.empty .e2 { font-size: 27rpx; line-height: 1.7; margin: 20rpx 0 32rpx; }
+
+.loading { padding: 60rpx; text-align: center; color: #6c7a86; font-size: 26rpx; }
+
+/* ---------- 组件配套 ---------- */
+.spacer { height: 6rpx; }
+
+/* 封面取不到时的文字占位。B 站图床对站外 Referer 可能返 403，
+   而 image 加载失败不报错、只留一块灰底，看起来像页面没做完。 */
+.vcover .ph {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  padding: 6rpx; box-sizing: border-box;
+  font-size: 19rpx; color: #8a969f; text-align: center; line-height: 1.45;
+}
+.vcover.dead { background: #eef1f4; }

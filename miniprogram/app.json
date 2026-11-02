@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/new/new",
+    "pages/reports/reports",
+    "pages/learn/learn",
+    "pages/chat/chat",
+    "pages/report/report",
+    "pages/calendar/calendar"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#0f4d5c",
+    "navigationBarTitleText": "通途",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f7f9"
+  },
+  "tabBar": {
+    "color": "#6c7a86",
+    "selectedColor": "#0f4d5c",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页" },
+      { "pagePath": "pages/new/new", "text": "预演" },
+      { "pagePath": "pages/reports/reports", "text": "历史" },
+      { "pagePath": "pages/learn/learn", "text": "看懂" },
+      { "pagePath": "pages/chat/chat", "text": "老周" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

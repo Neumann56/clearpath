@@ -1,0 +1,390 @@
+{
+ "version": "trend-2026-10-31",
+ "asOf": "2026-10-31",
+ "source": {
+  "name": "UN Comtrade",
+  "dataset": "HS as reported · annual · imports (M)",
+  "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS",
+  "note": "公开预览接口，无需密钥。数值为进口额（美元），netWgt 为净重。isReported=false 表示非报告国自行申报（镜像估算）。"
+ },
+ "years": [
+  2023,
+  2024
+ ],
+ "paramsVersion": "kb-2026.10.24-5",
+ "markets": {
+  "HU": {
+   "reporterCode": 348,
+   "name": "匈牙利",
+   "items": {
+    "610910": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 233128868,
+       "netWgtKg": 13966490,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 275852364,
+       "netWgtKg": null,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 11166552,
+       "netWgtKg": 519679,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 8189981,
+       "netWgtKg": 671201,
+       "isReported": false
+      }
+     ]
+    },
+    "847130": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 602306302,
+       "netWgtKg": null,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 765920585,
+       "netWgtKg": 5532960,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 42124125,
+       "netWgtKg": 360417,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 29695832,
+       "netWgtKg": 204183,
+       "isReported": false
+      }
+     ]
+    },
+    "851713": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 1840900060,
+       "netWgtKg": null,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 1931812738,
+       "netWgtKg": 1321209,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 2387548,
+       "netWgtKg": 24528,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 6441047,
+       "netWgtKg": 35421,
+       "isReported": false
+      }
+     ]
+    },
+    "854143": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 236955724,
+       "netWgtKg": null,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 138694473,
+       "netWgtKg": null,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 150613289,
+       "netWgtKg": 35683718,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 49426091,
+       "netWgtKg": 20215712,
+       "isReported": false
+      }
+     ]
+    },
+    "870891": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 159301054,
+       "netWgtKg": 10331463,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 150534797,
+       "netWgtKg": 9828554,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 7606832,
+       "netWgtKg": 688873,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 6272755,
+       "netWgtKg": 563919,
+       "isReported": false
+      }
+     ]
+    },
+    "940360": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 130143110,
+       "netWgtKg": 55765953,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 137629983,
+       "netWgtKg": null,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 11849521,
+       "netWgtKg": 3576617,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 11309750,
+       "netWgtKg": 4728182,
+       "isReported": false
+      }
+     ]
+    }
+   }
+  },
+  "CZ": {
+   "reporterCode": 203,
+   "name": "捷克",
+   "items": {
+    "610910": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 446254134,
+       "netWgtKg": null,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 470442657,
+       "netWgtKg": 22927494,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 26571087,
+       "netWgtKg": 2427059,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 27111356,
+       "netWgtKg": 795645,
+       "isReported": false
+      }
+     ]
+    },
+    "847130": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 4059612451,
+       "netWgtKg": 10067969,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 4318277986,
+       "netWgtKg": null,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 3644728311,
+       "netWgtKg": 8453232,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 3608515848,
+       "netWgtKg": 8127615,
+       "isReported": false
+      }
+     ]
+    },
+    "851713": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 10908495993,
+       "netWgtKg": 6028196,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 10639722426,
+       "netWgtKg": 6450398,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 9577628692,
+       "netWgtKg": 5283327,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 8681075796,
+       "netWgtKg": 5234922,
+       "isReported": false
+      }
+     ]
+    },
+    "854143": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 422475917,
+       "netWgtKg": null,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 187266213,
+       "netWgtKg": null,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 371632442,
+       "netWgtKg": 76891858,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 157120650,
+       "netWgtKg": 57286555,
+       "isReported": false
+      }
+     ]
+    },
+    "870891": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 374920297,
+       "netWgtKg": 34921240,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 366028115,
+       "netWgtKg": 32157304,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 43021093,
+       "netWgtKg": 4614270,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 41106916,
+       "netWgtKg": 4693373,
+       "isReported": false
+      }
+     ]
+    },
+    "940360": {
+     "world": [
+      {
+       "year": 2023,
+       "valueUsd": 408303362,
+       "netWgtKg": null,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 374920995,
+       "netWgtKg": null,
+       "isReported": false
+      }
+     ],
+     "china": [
+      {
+       "year": 2023,
+       "valueUsd": 17177152,
+       "netWgtKg": null,
+       "isReported": false
+      },
+      {
+       "year": 2024,
+       "valueUsd": 19228112,
+       "netWgtKg": null,
+       "isReported": false
+      }
+     ]
+    }
+   }
+  }
+ },
+ "skipped": []
+}

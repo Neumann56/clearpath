@@ -1,0 +1,9 @@
+{
+  "name": "apiProxy",
+  "version": "1.0.0",
+  "description": "通途 CLEARPATH · 小程序请求转发（免备案域名通道）",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}

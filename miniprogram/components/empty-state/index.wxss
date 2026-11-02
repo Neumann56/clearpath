@@ -1,0 +1,21 @@
+.es {
+  padding: 100rpx 40rpx;
+  text-align: center;
+  color: #6c7a86;
+}
+.e1 { font-size: 60rpx; opacity: 0.45; line-height: 1.2; }
+.e2 { font-size: 27rpx; line-height: 1.7; margin: 20rpx auto 32rpx; max-width: 480rpx; }
+
+.btn {
+  display: inline-block;
+  min-width: 300rpx;
+  padding: 0 40rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  font-size: 29rpx;
+  color: #3d4a55;
+  background: #fff;
+  border: 1rpx solid #e2e7ec;
+  border-radius: 22rpx;
+}
+.btn-hover { background: #f4f7f8; }

@@ -1,0 +1,93 @@
+{
+  "genre": "business-report",
+  "theme_name": "business-modern",
+  "theme_file": "tokens/themes/business-modern.json",
+  "note": "基于 business-modern 主题，按 doc-formatter §2.5 硬要求覆盖字体与正文号：font-family 首项必须为 SimSun/宋体（禁用系统别名作首项，否则转 docx 时 eastAsia 字体失效），正文 12pt 小四并首行缩进 2em。business-modern 原值（微软雅黑 9pt、不缩进）不适用于本地 docx 转换通道。",
+  "tokens": {
+    "typography": {
+      "fontFamily": {
+        "heading": { "$type": "fontFamily", "$value": "黑体, SimHei, sans-serif" },
+        "body": { "$type": "fontFamily", "$value": "宋体, SimSun, serif" },
+        "bodyLatin": { "$type": "fontFamily", "$value": "Times New Roman, serif" },
+        "data": { "$type": "fontFamily", "$value": "Arial, sans-serif" },
+        "code": { "$type": "fontFamily", "$value": "Consolas, monospace" }
+      },
+      "fontSize": {
+        "title": { "$type": "dimension", "$value": "26pt" },
+        "coverTitle": { "$type": "dimension", "$value": "26pt" },
+        "coverCategory": { "$type": "dimension", "$value": "12pt" },
+        "subtitle": { "$type": "dimension", "$value": "14pt" },
+        "h1": { "$type": "dimension", "$value": "16pt" },
+        "h2": { "$type": "dimension", "$value": "13pt" },
+        "h3": { "$type": "dimension", "$value": "12pt" },
+        "body": { "$type": "dimension", "$value": "12pt" },
+        "small": { "$type": "dimension", "$value": "10pt" },
+        "table": { "$type": "dimension", "$value": "10pt" },
+        "caption": { "$type": "dimension", "$value": "10pt" }
+      },
+      "lineHeight": {
+        "body": { "$type": "number", "$value": 1.6 },
+        "heading": { "$type": "number", "$value": 1.35 },
+        "table": { "$type": "number", "$value": 1.35 }
+      },
+      "fontWeight": {
+        "bold": { "$type": "fontWeight", "$value": 700 },
+        "normal": { "$type": "fontWeight", "$value": 400 }
+      }
+    },
+    "color": {
+      "primary": { "$type": "color", "$value": "#1565C0" },
+      "secondary": { "$type": "color", "$value": "#0288D1" },
+      "accent": { "$type": "color", "$value": "#00897B" },
+      "text": { "$type": "color", "$value": "#212121" },
+      "textSecondary": { "$type": "color", "$value": "#616161" },
+      "heading": { "$type": "color", "$value": "#1A237E" },
+      "divider": { "$type": "color", "$value": "#D6DCE5" },
+      "background": { "$type": "color", "$value": "#FFFFFF" },
+      "surface": { "$type": "color", "$value": "#F2F6FB" },
+      "tableHead": { "$type": "color", "$value": "#E8EEF7" },
+      "warn": { "$type": "color", "$value": "#B45309" },
+      "warnBg": { "$type": "color", "$value": "#FEF6E7" }
+    },
+    "spacing": {
+      "paragraph": { "$type": "dimension", "$value": "0.55em" },
+      "indent": { "$type": "dimension", "$value": "2em" },
+      "sectionGap": { "$type": "dimension", "$value": "1.8em" },
+      "cardPadding": { "$type": "dimension", "$value": "1em" }
+    },
+    "layout": {
+      "pageSize": { "$type": "string", "$value": "A4" },
+      "marginTop": { "$type": "dimension", "$value": "2.5cm" },
+      "marginBottom": { "$type": "dimension", "$value": "2.2cm" },
+      "marginLeft": { "$type": "dimension", "$value": "2.7cm" },
+      "marginRight": { "$type": "dimension", "$value": "2.7cm" },
+      "maxContentWidth": { "$type": "dimension", "$value": "15.6cm" }
+    }
+  },
+  "css_variables": {
+    "--typography-fontFamily-heading": "黑体, SimHei, sans-serif",
+    "--typography-fontFamily-body": "宋体, SimSun, serif",
+    "--typography-fontSize-coverTitle": "26pt",
+    "--typography-fontSize-coverCategory": "12pt",
+    "--typography-fontSize-h1": "16pt",
+    "--typography-fontSize-h2": "13pt",
+    "--typography-fontSize-h3": "12pt",
+    "--typography-fontSize-body": "12pt",
+    "--typography-fontSize-small": "10pt",
+    "--typography-lineHeight-body": "1.6",
+    "--typography-fontWeight-bold": "700",
+    "--color-primary": "#1565C0",
+    "--color-heading": "#1A237E",
+    "--color-text": "#212121",
+    "--color-muted": "#616161",
+    "--color-border": "#D6DCE5",
+    "--color-bg": "#FFFFFF",
+    "--color-highlight": "#F2F6FB",
+    "--color-tableHead": "#E8EEF7",
+    "--color-warn": "#B45309",
+    "--color-warnBg": "#FEF6E7",
+    "--spacing-paragraph": "0.55em",
+    "--spacing-section": "1.8em",
+    "--layout-contentWidth": "15.6cm"
+  }
+}
